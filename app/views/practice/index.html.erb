@@ -1,0 +1,23 @@
+<!-- index.html.erb -->
+
+<h1>Choose a Color!</h1>
+
+<% if !@name.blank? %> <!-- if @name is not nil, blank, or empty -->
+  <h2>Welcome Back, <%= @name %></h2>
+<% end %>
+
+<p>
+    <%= link_to "Red", about_path(color: "red") %>
+</p>
+
+<p>
+    <%= link_to "Blue", about_path(color: "blue") %>
+</p>
+
+<p>
+    <%= link_to "Green", about_path(color: "green") %>
+</p>
+
+<p>
+    <%= link_to "Yellow", about_path(color: "yellow") %>
+</p>

@@ -1,0 +1,31 @@
+<!-- about.html.erb -->
+
+<!-- Remember, internal stylesheet is not the best,
+    but we have no way to get a Ruby instance
+    variable into a CSS file, so we don't have
+    much of an alternative here -->
+<style>
+
+    #color_me_in {
+        background-color: <%= @color %>;
+        color: white;
+        width: 250px;
+        height: 250px;
+    }
+
+</style>
+
+<div id="color_me_in">
+    <p>
+      <% if @color != nil %>
+        <%= @color.upcase %> BOX ACTIVATED!
+      <% end %>
+    </p>
+</div>
+
+<%= form_tag index_path do %>
+
+    <p><%= text_field_tag :name, nil, placeholder: "What's your name?" %></p>
+    <p><%= submit_tag :submit %></p>
+
+<% end %>
